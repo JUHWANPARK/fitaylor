@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161112144734) do
+ActiveRecord::Schema.define(version: 20161113132956) do
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "item1"
+    t.string   "item2"
+    t.string   "item3"
+    t.string   "item4"
+    t.string   "item5"
+    t.integer  "size1"
+    t.integer  "size2"
+    t.integer  "size3"
+    t.integer  "size4"
+    t.integer  "size5"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
