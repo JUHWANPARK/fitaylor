@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'home/contact'
   get 'home/gallery'
-  get 'home/services'
-  get 'home/about'
+  get 'home/clothes'
+  get 'home/upload'
+  get 'home/1'
   
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.

@@ -46,8 +46,8 @@
 					<div class="menu">
 						<ul class="nav nav-tabs" role="tablist">
 							<li role="presentation"><a href="/home/index" class="<%= is_active('home', 'index') %>">Home</a></li>
-							<li role="presentation"><a href="/home/about" class="<%= is_active('home', 'about') %>">Clothes</a></li>
-							<li role="presentation"><a href="/home/services" class="<%= is_active('home', 'services') %>">Register</a></li>
+							<li role="presentation"><a href="/home/clothes" class="<%= is_active('home', 'clothes') %>">Clothes</a></li>
+							<li role="presentation"><a href="/home/upload" class="<%= is_active('home', 'upload') %>">Upload</a></li>
 							<li role="presentation"><a href="/home/gallery" class="<%= is_active('home', 'gallery') %>">Guide</a></li>
 							<li role="presentation"><a href="/home/contact" class="<%= is_active('home', 'contact') %>">Mypage</a></li>
 							<% if user_signed_in? %>
@@ -55,14 +55,7 @@
                             <%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?" }%>
                               </li>
                             <% else %>
-                               <li class="dropdown">
-                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign in
-                                  <b class="caret"></b></a>
-                                   <ul class="dropdown-menu">
-                                        <li><%= link_to "with Auth Blog", new_user_session_path %></li>
-                                        <li><%= link_to "with Facebook", user_facebook_omniauth_authorize_path(:facebook) %></li>
-                                   </ul>
-                               </li>
+                               <li role="presentation"><%= link_to "login", new_user_session_path %></li>
                                <li role="presentation"><%= link_to "Sign up", new_user_registration_path %></li>
 	                        <% end %>
 						</ul>
