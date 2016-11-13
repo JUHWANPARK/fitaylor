@@ -1075,6 +1075,7 @@ ul.social-network {
   -o-transition: all 0.3s ease-in-out;
 }
 .sub-footer  {
+  color:#ffffff;
 	background:#272727;
 	padding:30px;
 }

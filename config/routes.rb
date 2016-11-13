@@ -6,6 +6,16 @@ Rails.application.routes.draw do
   get 'home/clothes'
   get 'home/upload'
   get 'home/1'
+  get 'home/2'
+  get 'home/3'
+  get 'home/4'
+  get 'home/5'
+  get 'home/6'
+  get 'home/7'
+  get 'home/8'
+  get 'home/9'
+  get 'home/10'
+  
   
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
