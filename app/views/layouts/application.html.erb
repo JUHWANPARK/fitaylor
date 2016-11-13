@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--devise gem-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    
+    <title>FITaylor</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link href="css/animate.min.css" rel="stylesheet"> 
+	<link href="css/style.css" rel="stylesheet" />	
+    <!-- =======================================================
+        Theme Name: Day
+        Theme URL: https://bootstrapmade.com/day-multipurpose-html-template-for-free/
+        Author: BootstrapMade
+        Author URL: https://bootstrapmade.com
+    ======================================================= -->
+  
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <header id="header">
+        <nav class="navbar navbar-default navbar-static-top" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                   <div class="navbar-brand">
+						<a href="/home/index"><h1>Fitaylor</h1></a>
+					</div>
+                </div>				
+                <div class="navbar-collapse collapse">							
+					<div class="menu">
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation"><a href="/home/index" class="<%= is_active('home', 'index') %>">Home</a></li>
+							<li role="presentation"><a href="/home/about" class="<%= is_active('home', 'about') %>">Clothes</a></li>
+							<li role="presentation"><a href="/home/services" class="<%= is_active('home', 'services') %>">Register</a></li>
+							<li role="presentation"><a href="/home/gallery" class="<%= is_active('home', 'gallery') %>">Guide</a></li>
+							<li role="presentation"><a href="/home/contact" class="<%= is_active('home', 'contact') %>">Mypage</a></li>
+							<% if user_signed_in? %>
+							  <li >
+                            <%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?" }%>
+                              </li>
+                            <% else %>
+                               <li class="dropdown">
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign in
+                                  <b class="caret"></b></a>
+                                   <ul class="dropdown-menu">
+                                        <li><%= link_to "with Auth Blog", new_user_session_path %></li>
+                                        <li><%= link_to "with Facebook", user_facebook_omniauth_authorize_path(:facebook) %></li>
+                                   </ul>
+                               </li>
+                               <li role="presentation"><%= link_to "Sign up", new_user_registration_path %></li>
+	                        <% end %>
+						</ul>
+						
+					</div>
+				</div>		
+            </div><!--/.container-->
+        </nav><!--/nav-->		
+    </header><!--/header-->	
+<%= yield %>
+
+</body>
+</html>
