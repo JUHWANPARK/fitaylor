@@ -5,7 +5,8 @@ class HomeController < ApplicationController
   def write
 
     post = Post.new
-
+    
+    post.cloth = params[:cloth_type]
     post.item1 = params[:item_val1]
     post.item2 = params[:item_val2]
     post.item3 = params[:item_val3]

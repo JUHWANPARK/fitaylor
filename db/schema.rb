@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20161113132956) do
 
   create_table "posts", force: :cascade do |t|
+    t.string   "cloth"
     t.string   "item1"
     t.string   "item2"
     t.string   "item3"

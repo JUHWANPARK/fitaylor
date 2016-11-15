@@ -2,7 +2,7 @@ class CreatePosts < ActiveRecord::Migration
   def change
     create_table :posts do |t|
       
-
+      t.string :cloth
       t.string :item1
       t.string :item2
       t.string :item3
