@@ -2,6 +2,8 @@ class CreatePosts < ActiveRecord::Migration
   def change
     create_table :posts do |t|
       
+      
+      t.string :image_url, default:""
       t.string :cloth
       t.string :item1
       t.string :item2
@@ -13,7 +15,7 @@ class CreatePosts < ActiveRecord::Migration
       t.integer :size3
       t.integer :size4
       t.integer :size5
-    
+      
       
       t.timestamps null: false
     end

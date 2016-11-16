@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'fog-aws'     #아마존 s3
+gem 'carrierwave' #이미지 업로드
+gem 'mini_magick' #이미지 사이즈 조정
+
 gem 'omniauth-facebook'
 
 # 회원인증 및 권한설정을 위한 젬

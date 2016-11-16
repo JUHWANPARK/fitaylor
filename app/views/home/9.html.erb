@@ -11,7 +11,7 @@
 				<div class="container">
 		
 		 <div class="mysize_btn" align="center">
-		 	<div  class="row" >
+		 	<div  class="row wow fadeInDown"  data-wow-duration="1000ms" data-wow-delay="300ms">
  				  <div class="col-xs-6 col-md-3"><a href="/home/2"><img src="/assets/half_tshits_1.jpg" alt="반팔티셔츠" width="66" height="84" /></a>
                             <p>반팔티셔츠<br /></p></div>
 				  <div class="col-xs-6 col-md-3"><a href="/home/3"><img src="/assets/ohmy_1.jpg" alt="민소매" width="66" height="84" /></a>
@@ -44,13 +44,13 @@
 	
 	<hr>
 	<div class="container" >
-	<form class="well" action="/home/write" method="POST">
+	<form class="well" action="/home/write" method="POST" enctype="multipart/form-data">
 		<div  class="row" >
 				<h2>반바지</h2>
-		  	<div class="col-md-6">
-		  		<img src="/assets/shortpants.png" alt="반바지" />
+		  	<div class="col-xs-12 col-sm-6" align="center">
+		  		<img class="img-responsive" src="/assets/shortpants.png" alt="반바지" />
 		    </div>
-		  	<div  class="col-md-6">
+		  	<div class="col-xs-12 col-sm-6">
 		  			
 		  			<input type="hidden" name="cloth_type" value="반바지">
 		  				
@@ -70,6 +70,8 @@
 
 					<input type="hidden" name="item_val5" value="밑단단면"><h4>5. 밑단단면</h4> 
 					<input type="text" name="size_val5" value="" size="10">cm<br><br>
+					
+					<input type="file" name="pic" accept="image/*"><br>
 					
 					<button type="submit" >입력하기</button>
 			</div>
