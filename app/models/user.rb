@@ -1,3 +1,10 @@
+class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable,
+         :omniauthable, :omniauth_providers => [:facebook]
+         
   def self.find_for_facebook_oauth(auth)
     user = where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
     user.provider = auth.provider
@@ -11,16 +18,7 @@
   # 이 때는 이상하게도 after_create 콜백이 호출되지 않아서 아래와 같은 조치를 했다.
   user.add_role :user if user.roles.empty?
   user   # 최종 반환값은 user 객체이어야 한다.
-  end
-
-
-class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, :omniauth_providers => [:facebook]
-         
+  end      
 
 
   def self.new_with_session(params, session)
