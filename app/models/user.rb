@@ -5,6 +5,19 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
          
+
+
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+        user.email = data["email"] if user.email.blank?
+      end
+    end
+  end
+  
+  
+end
+
   def self.find_for_facebook_oauth(auth)
     user = where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
     user.provider = auth.provider
@@ -19,17 +32,4 @@ class User < ActiveRecord::Base
   user.add_role :user if user.roles.empty?
   user   # 최종 반환값은 user 객체이어야 한다.
   end
-
-  def self.new_with_session(params, session)
-    super.tap do |user|
-      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-        user.email = data["email"] if user.email.blank?
-      end
-    end
-  end
-  
-  
-end
-
-
 
