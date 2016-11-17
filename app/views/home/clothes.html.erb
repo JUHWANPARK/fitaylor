@@ -9,39 +9,42 @@
                     저장된 옷
                 </h1>
             </div>
-            
-            <% @posts.each do |p| %>
-	            <div class="col-xs-6 col-sm-4 col-md-3 img-responsive">
-	                <div class="panel panel-default">
-	                    <div class="panel-heading">
-	                        <h4><%= p.cloth %></h4>
-	                    </div>
-	                    <% unless p.image_url.nil? %>
-	                    	<img class="img-responsive" src="<%= p.image_url %>">
-	                    <% end %><br>
-	                    <%= p.item1 %> : <%= p.size1 %>cm <br>
-						<%= p.item2 %> : <%= p.size2 %>cm <br>
-						<% if p.item3.nil? %>
-							<br>
-		  				<% else %>
-		  					<%= p.item3 %> : <%= p.size3 %>cm <br>
-						<% end %>
-						
-						<% if p.item4.nil? %>
-							<br>
-						<% else %>
-							<%= p.item4 %> : <%= p.size4 %>cm <br>
-						<% end %>
-						
-						<% if p.item5.nil? %>
-							<br>
-						<% else %>
-							<%= p.item5 %> : <%= p.size5 %>cm <br>
-						<% end %>
-			        </div>
-			    </div>
-		    <% end %>
+            <% will_paginate @posts %>
+	            <% @posts.each do |p| %>
+		            <div class="col-xs-6 col-sm-4 col-md-3 img-responsive">
+		                <div class="panel panel-default">
+		                    <div class="panel-heading">
+		                        <h4><%= p.cloth %></h4>
+		                    </div>
+		                    <% unless p.image_url.nil? %>
+		                    	<img class="img-responsive" src="<%= p.image_url %>">
+		                    <% end %><br>
+		                    <%= p.item1 %> : <%= p.size1 %>cm <br>
+							<%= p.item2 %> : <%= p.size2 %>cm <br>
+							<% if p.item3.nil? %>
+								<br>
+			  				<% else %>
+			  					<%= p.item3 %> : <%= p.size3 %>cm <br>
+							<% end %>
+							
+							<% if p.item4.nil? %>
+								<br>
+							<% else %>
+								<%= p.item4 %> : <%= p.size4 %>cm <br>
+							<% end %>
+							
+							<% if p.item5.nil? %>
+								<br>
+							<% else %>
+								<%= p.item5 %> : <%= p.size5 %>cm <br>
+							<% end %>
+				        </div>
+				    </div>
+				    
+			    <% end %>
+		    
         </div>
+        <div class="pagination"><%= will_paginate @posts, renderer: BootstrapPagination::Rails%></div>
     </div>
 
     

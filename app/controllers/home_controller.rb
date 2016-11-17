@@ -11,7 +11,7 @@ class HomeController < ApplicationController
     uploader.store!(params[:pic])
     
     post = Post.new
-    
+
     post.image_url = uploader.url 
     post.cloth = params[:cloth_type]
     post.item1 = params[:item_val1]
@@ -33,7 +33,7 @@ class HomeController < ApplicationController
   
   def clothes
     
-    @posts = Post.all
+    @posts = Post.all.paginate(:page => params[:page], :per_page => 8).order('created_at DESC')
 
   end
 end

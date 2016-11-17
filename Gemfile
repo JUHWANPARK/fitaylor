@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'will_paginate-bootstrap'  #페이지 넘기기
+
+
 gem 'puma'        #create procfile
 
 gem 'fog-aws'     #아마존 s3
