@@ -54,6 +54,9 @@
 		  				
    								<input type="hidden" name="cloth_type" value="치마">
    								
+   								<h4>Title</h4>
+									<input type="text" name="title" value="" size="10" required >
+   								
    								<input type="hidden" name="item_val1" value="총장"><h4>1. 총장</h4>
     							<input type="text" name="size_val1" value="" size="10" required >cm
   									
@@ -64,9 +67,12 @@
 									<input type="hidden" name="item_val3" value="밑단단면"><h4>3. 밑단단면</h4> 
 									<input type="text" name="size_val3" value="" size="10" required>cm<br><br>
 									
-									<input type="file" name="pic" accept="image/*" required><br>
+									<h4>구매일자</h4>
+									<input type="date", type="month" name="day" value="" required ><br><br>
 									
-									<button type="submit" >입력하기</button>
+									<input type="file" name="pic" accept="image/*" required>
+									
+									<button type="submit" class="btn btn-info">입력하기</button>
 			</div>
 		</div>
 		</div>

@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113132956) do
+ActiveRecord::Schema.define(version: 20161117160441) do
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "image_url",  default: ""
@@ -27,6 +34,7 @@ ActiveRecord::Schema.define(version: 20161113132956) do
     t.integer  "size3"
     t.integer  "size4"
     t.integer  "size5"
+    t.integer  "user_id"
     t.string   "day"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false

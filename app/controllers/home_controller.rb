@@ -25,6 +25,7 @@ class HomeController < ApplicationController
     post.size3 = params[:size_val3]
     post.size4 = params[:size_val4]
     post.size5 = params[:size_val5]
+    post.user = current_user
     post.day = params[:day]
     post.save
     
@@ -38,5 +39,23 @@ class HomeController < ApplicationController
     @posts = Post.all.paginate(:page => params[:page], :per_page => 8).order('created_at DESC')
 
   end
+  
+  def comment_write
+    comment = Comment.new
+    comment.content = params[:content]
+    comment.post_id = params[:id_of_post]
+    comment.save
+    
+    redirect_to :back
+  end
+  
+  def delete_post
+    @del_post = Post.find(params[:post_id])
+    @del_post.destroy
+    redirect_to "/home/clothes"
+  end
+  
+
+
 end
 

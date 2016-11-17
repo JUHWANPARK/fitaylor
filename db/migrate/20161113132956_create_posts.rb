@@ -15,6 +15,7 @@ class CreatePosts < ActiveRecord::Migration
       t.integer :size3
       t.integer :size4
       t.integer :size5
+      t.integer :user_id
       t.string :day
       
       t.timestamps null: false
