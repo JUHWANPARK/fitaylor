@@ -20,7 +20,6 @@ class User < ActiveRecord::Base
   user   # 최종 반환값은 user 객체이어야 한다.
   end      
 
-
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
