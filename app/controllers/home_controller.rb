@@ -13,6 +13,7 @@ class HomeController < ApplicationController
     post = Post.new
 
     post.image_url = uploader.url 
+    post.title = params[:title]
     post.cloth = params[:cloth_type]
     post.item1 = params[:item_val1]
     post.item2 = params[:item_val2]
@@ -24,6 +25,7 @@ class HomeController < ApplicationController
     post.size3 = params[:size_val3]
     post.size4 = params[:size_val4]
     post.size5 = params[:size_val5]
+    post.day = params[:day]
     post.save
     
     

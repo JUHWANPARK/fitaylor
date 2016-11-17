@@ -52,7 +52,9 @@
 		  		<img class="img-responsive" src="/assets/pants.png" alt="긴바지" />
 		    </div>
 		  	<div class="col-xs-12 col-sm-6">
-  				<input type="hidden" name="cloth_type" value="긴바지">
+  				<input type="hidden" name="cloth_type" value="긴바지"><h4>Title</h4>
+				
+				<input type="text" name="title" value="" size="10" required >
 				
 				<input type="hidden" name="item_val1" value="총장"><h4>1. 총장</h4>
 				<input type="text" name="size_val1" value="" size="10" required >cm
@@ -69,11 +71,13 @@
 				<input type="text" name="size_val4" value="" size="10" required>cm
 
 				<input type="hidden" name="item_val5" value="밑단단면"><h4>5. 밑단단면</h4> 
-				<input type="text" name="size_val5" value="" size="10" required>cm<br><br>
+				<input type="text" name="size_val5" value="" size="10" required>cm<br><br><h4>6. 구매날짜</h4>
 				
-				<input type="file" name="pic" accept="image/*" required><br>
+				<input type="date", type="month" name="day" value="" size="10" required ><br><br>
 				
-				<button type="submit" >입력하기</button>
+				<input type="file" name="pic" accept="image/*" required>
+				
+				<button type="submit" class="btn btn-info">입력하기</button>
 			</div>
 		</div>
 	</form>

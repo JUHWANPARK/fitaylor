@@ -19,6 +19,8 @@
 		                    <% unless p.image_url.nil? %>
 		                    	<img class="img-responsive" src="<%= p.image_url %>">
 		                    <% end %><br>
+		                    Title : <%= p.title %><br>
+		                    구매날짜: <%= p.day %><br>
 		                    <%= p.item1 %> : <%= p.size1 %>cm <br>
 							<%= p.item2 %> : <%= p.size2 %>cm <br>
 							<% if p.item3.nil? %>
@@ -38,15 +40,46 @@
 							<% else %>
 								<%= p.item5 %> : <%= p.size5 %>cm <br>
 							<% end %>
+							
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  댓글달기
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><%= p.title %></h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+      	<form action="/home/reply" method="POST">
+      		<input type="text" class="form-control" placeholder="Text input">
+      	
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 				        </div>
 				    </div>
 				    
 			    <% end %>
-		    
+		   
         </div>
-        <div class="pagination"><%= will_paginate @posts, renderer: BootstrapPagination::Rails%></div>
+        <div align="center" class="pagination" class="col-xs-12 img-responsive" ><%= will_paginate @posts, renderer: BootstrapPagination::Rails%></div>
     </div>
 
-    
+
+<script>
+	$(document).off('.data-api')
+</script>
 </body>
 </html>

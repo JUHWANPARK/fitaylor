@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'will_paginate-bootstrap'  #페이지 넘기기
+gem 'ransack'
 
+gem 'will_paginate-bootstrap'  #페이지 넘기기
 
 gem 'puma'        #create procfile
 
