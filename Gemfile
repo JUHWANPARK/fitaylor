@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'puma'        #create procfile
+
 gem 'fog-aws'     #아마존 s3
 gem 'carrierwave' #이미지 업로드
 gem 'mini_magick' #이미지 사이즈 조정
