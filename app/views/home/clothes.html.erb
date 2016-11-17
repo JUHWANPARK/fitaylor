@@ -22,16 +22,19 @@
 	                    <%= p.item1 %> : <%= p.size1 %>cm <br>
 						<%= p.item2 %> : <%= p.size2 %>cm <br>
 						<% if p.item3.nil? %>
+							<br>
 		  				<% else %>
 		  					<%= p.item3 %> : <%= p.size3 %>cm <br>
 						<% end %>
 						
 						<% if p.item4.nil? %>
+							<br>
 						<% else %>
 							<%= p.item4 %> : <%= p.size4 %>cm <br>
 						<% end %>
 						
 						<% if p.item5.nil? %>
+							<br>
 						<% else %>
 							<%= p.item5 %> : <%= p.size5 %>cm <br>
 						<% end %>
@@ -41,9 +44,6 @@
         </div>
     </div>
 
-
-
-		<h1><a href="/">이메일 보내러가기</a></h1>
     
 </body>
 </html>
