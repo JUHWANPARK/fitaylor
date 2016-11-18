@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  # before_action :authenticate_user!, except: [ :index ] 접근 금지
+  
   def index
   end
   

@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   get 'home/index'
-  get 'home/contact'
-  get 'home/gallery'
+  get 'home/mysize'
   get 'home/clothes'
   post 'home/write' =>'home#write'
   get 'home/upload'
