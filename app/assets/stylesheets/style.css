@@ -229,7 +229,7 @@ a:hover {
 	margin-bottom:20px;
 	color:#fff;
 	padding:10px;
-	background:#65AAF0;
+	background:rgba(56, 59, 64, 0.69);
 }
 
 @media (max-width: 767px) {

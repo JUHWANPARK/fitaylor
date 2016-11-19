@@ -3,7 +3,7 @@
   <body>	
 		<div class="container">
 			<div class="text-center">
-				<h2>등록하기</h2>
+				<h2>My Size </h2>
 				<br><br><br><br>
 
 				<div class="container">		
@@ -46,45 +46,44 @@
 	<div class="container" >
 	<form class="well" action="/home/write" method="POST" enctype="multipart/form-data">
 		<div  class="row" >
-				<h2>반바지</h2>
+				<h2>코트</h2>
 		  	<div class="col-xs-12 col-sm-6" align="center">
-		  		<img class="img-responsive" src="/assets/shortpants.png" alt="반바지" />
+		  		<img class="img-responsive" src="/assets/coat.png" alt="코트" />
 		    </div>
 		  	<div class="col-xs-12 col-sm-6">
-		  			
-		  			<input type="hidden" name="cloth_type" value="반바지">
-		  			
-		  			<h4>Title</h4>
-					<input type="text" name="title" value="" size="10" required >
-		  				
-   					<input type="hidden" name="item_val1" value="총장"><h4>1. 총장</h4>
-					<input type="text" name="size_val1" value="" size="10" required>cm
-  					
+	  			<% if @result_8_size1.nil? %>
+				<input type="hidden" name="item_val1" value="총장"><h4>1. 총장</h4>
+				<input type="text" name="size_val1" value="<%= @result_8_size1 %>" size="10" required >cm
+	  				
 			
-					<input type="hidden" name="item_val2" value="허리단면"><h4>2. 허리단면</h4> 
-					<input type="text" name="size_val2" value="" size="10" required>cm
-		
-					<input type="hidden" name="item_val3" value="허벅지단면"><h4>3. 허벅지단면</h4> 
-					<input type="text" name="size_val3" value="" size="10" required>cm
-								
+				<input type="hidden" name="item_val2" value="어깨너비"><h4>2. 어깨너비</h4> 
+				<input type="text" name="size_val2" value="<%= @result_8_size2 %>" size="10" required>cm
+	
+				<input type="hidden" name="item_val3" value="가슴단면"><h4>3. 가슴단면</h4> 
+				<input type="text" name="size_val3" value="<%= @result_8_size3 %>" size="10" required>cm
+							
 
-					<input type="hidden" name="item_val4" value="밑위"><h4>4. 밑위</h4> 
-					<input type="text" name="size_val4" value="" size="10" required>cm
+				<input type="hidden" name="item_val4" value="소매길이"><h4>4. 소매길이</h4> 
+				<input type="text" name="size_val4" value="<%= @result_8_size4 %>" size="10" required>cm<br><br>
+				<% else %>
+				<input type="hidden" name="item_val1" value="총장"><h4>1. 총장</h4>
+				<input type="text" name="size_val1" value="<%= @result_8_size1.round(1) %>" size="10" required >cm
+	  				
+			
+				<input type="hidden" name="item_val2" value="어깨너비"><h4>2. 어깨너비</h4> 
+				<input type="text" name="size_val2" value="<%= @result_8_size2.round(1) %>" size="10" required>cm
+	
+				<input type="hidden" name="item_val3" value="가슴단면"><h4>3. 가슴단면</h4> 
+				<input type="text" name="size_val3" value="<%= @result_8_size3.round(1) %>" size="10" required>cm
+							
 
-					<input type="hidden" name="item_val5" value="밑단단면"><h4>5. 밑단단면</h4> 
-					<input type="text" name="size_val5" value="" size="10" required>cm<br><br>
-					
-					<h4>구매일자</h4>
-					<input type="date", type="month" name="day" value="" size="10" required ><br><br>
-					
-					<input type="file" name="pic" accept="image/*" required>
-					
-					<button type="submit" class="btn btn-info">입력하기</button>
+				<input type="hidden" name="item_val4" value="소매길이"><h4>4. 소매길이</h4> 
+				<input type="text" name="size_val4" value="<%= @result_8_size4.round(1) %>" size="10" required>cm<br><br>
+				<% end %>
 			</div>
-		</div>
 		</div>
 	</form>
 	</div>
-
+	
 </body>
 </html>

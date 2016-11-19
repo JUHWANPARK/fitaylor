@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   get 'home/index'
   get 'home/mysize'
@@ -19,7 +19,17 @@ Rails.application.routes.draw do
   get 'home/write'
   post 'home/comment_write'
   get 'delete_post/:post_id' => "home#delete_post"
-
+  get 'home/result_1'
+  get 'home/result_2'
+  get 'home/result_3'
+  get 'home/result_4'
+  get 'home/result_5'
+  get 'home/result_6'
+  get 'home/result_7'
+  get 'home/result_8'
+  get 'home/result_9'
+  get 'home/result_10'
+  
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
